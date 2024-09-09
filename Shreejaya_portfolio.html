@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: Garamond, serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #17b5ce, #001ab0);
+            background-color: linear-gradient(135deg, #17b5ce, #001ab0);
             color: #333;
             text-align: left;
         }
@@ -17,7 +18,7 @@
             background: linear-gradient(135deg, #0056b3, #fed0c5);
             color: white;
             padding: 2rem 0;
-            text-align: center;
+	    text-align: center;
         }
         .header h1 {
             margin: 0;
@@ -29,25 +30,26 @@
         .section {
             margin: 1rem 0;
         }
-        .section h2 {
+        .section h2{
             color: #190591;
-        }
+	}
+	
         .button {
             display: inline-block;
             margin: 0.5rem;
             padding: 0.75rem 1.5rem;
-            color: #190591;
-            background-color: #fed0c5;
+            color:  #190591;
+            background-color: #fed0c5 ;
             text-decoration: none;
             border-radius: 15px;
-            border: 5px solid #190591;
+	    border: 5px solid #190591;
             font-size: 1rem;
-            transition: background-color 0.3s, border-color 0.3s;
+            transition: background-color 0.3s,  border-color 0.3s;
         }
         .button:hover {
             background-color: #0056b3;
-            color: #fed0c5;
-            border-color: #003d7a;
+	    color: #fed0c5;
+	    border-color: #003d7a;
         }
         footer {
             background-color: #333;
@@ -57,41 +59,76 @@
         footer p {
             margin: 0;
         }
-        #myPieChart {
+	#myPieChart {
             max-width: 500px;
             max-height: 500px;
             width: 100%;
             height: auto;
-            margin: 0 auto; /* Centers the canvas */
-            display: block; /* Ensures it's a block-level element */
+	    justify-align: center;
         }
-    </style>
+       </style>
 </head>
 <body>
     <div class="header">
         <h1>Shreejaya Karantha</h1>
-        <h3>Content Writer and Research Specialist, <a href="https://www.secretsofuniverse.in/">The Secrets of the Universe</a></h3>
-        <h3><a href="mailto: shreejayakaranth@gmail.com">shreejayakaranth@gmail.com</a></h3>
+        <h3>Content Writer and Research Specialist, <a href ="https://www.secretsofuniverse.in/">The Secrets of the Universe</a></h3>
+	<h3><a href ="mailto: shreejayakaranth@gmail.com">shreejayakaranth@gmail.com </a> </h3>
+
     </div>
 
     <div class="content">
-        <!-- Content sections omitted for brevity -->
+        <div class="section">
+            <p>Explore my work in science writing, focused in astronomy and cosmology. Below are the clickable links to some of my recent work.</p>
+        </div>
+        <div class="section">
+            <h2>YouTube Video Scripts (Research-Based Content Creation)</h2>
+            <a href="https://youtu.be/HvdLnUJahBs?si=4NMkLHWy3ku3T6Nr" class="button" target="_blank">Sun's Magnetic Field is About to Flip</a>
+            <a href="https://youtu.be/UonUkSxK-eY?feature=shared" class="button" target="_blank">Game Changer! A Mysterious Galaxy That Emits No Light Has Been Found</a>
+            <a href="https://youtu.be/Q0CE7qDQYpA?feature=shared" class="button" target="_blank">Scientists Announce a Massive Gravitational Wave Discovery! New Physics At Play?</a>
+             <a href="https://youtu.be/cUGFrH5vvio?feature=shared" class="button" target="_blank">Bone Chilling! Astronomers Just Saw a Star Eat Its Own Planet</a>
+<a href="https://youtu.be/at0dJosTCdw?feature=shared" class="button" target="_blank">First Images From Euclid Telescope Show The Universe Like Never Before</a>
+
+<a href="https://youtu.be/PTMroCIcwIc?si=0hfrSnuNLdQPOP_n" class="button" target="_blank">It Shouldn't Exist! JWST Finds a Strange Black Hole at the Edge of Time</a>
+
+<a href="https://youtu.be/-FhW7QLcIHE?si=vYR_onMGGXbn0SNd" class="button" target="_blank">Close Up Images Show Something Weird is Happening on Betelgeuse</a>
+
+<a href="https://youtu.be/f-AkVpmIwY8?si=M5vNh4ISOLqSvQbJ" class="button" target="_blank">Plot Twist! Even James Webb Has Confirmed Our Physics is Broken</a>
+
+<a href="https://drive.google.com/drive/folders/1I8w-wUXedo_7g0l7rOIzpQA9ZznWqzlO?usp=drive_link" class="button" target="_blank">If you want to read some of these scripts, click!</a>
+
+
+        </div>
+        <div class="section">
+            <h2>Explainer and Other Short Video Scripts</h2>
+            <a href="https://www.instagram.com/reel/CrGoUf9upXW/?utm_source=ig_web_copy_link" class="button" target="_blank">What are wormholes?</a>
+<a href="https://www.instagram.com/reel/CuSEh8zRG4x/?igsh=YWdnNnBrY3MwbWh2" class="button" target="_blank">Pluto has a 'heart'!</a>
+
+<a href="https://www.instagram.com/reel/CoKkPCzvLi4/?igsh=MThqMnM5YXJtNXg3Yg==" class="button" target="_blank">Why are Webb's mirror segments gold coated?</a>
+<a href="https://www.instagram.com/reel/Cri-K2-p3Tl/?igsh=MWZlaGpzZGp3eGw1aA==" class="button" target="_blank">We are going back to Jupiter!</a>
+<a href="https://www.instagram.com/reel/CrOawPPoc_8/?igsh=MWV1aTE2aTFuM3BocQ==" class="button" target="_blank">The beauty of Carina Nebula</a>	    
+
     </div>
+ <div class="section">
+            <h2>Short-form content</h2>
+            <a href="https://www.instagram.com/p/CrBIZv1L0u-/?utm_source=ig_web_copy_link" class="button" target="_blank">Afterlife of Stars</a>
 
-    <div class="section">
-        <h2>Work Statistics</h2>
-        <canvas id="myPieChart"></canvas>
-    </div>
+	<a href="https://www.instagram.com/p/CqdpPugpTvR/?utm_source=ig_web_copy_link" class="button" target="_blank">What are Primordial black holes?</a>
+	        
+	<a href="https://www.instagram.com/p/C_K_d73o42L/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">Astrophysics Image Description: MSH 15-52</a>
 
-    <footer>
-        <p>&copy; 2024 Shreejaya Karantha. All rights reserved.</p>
-    </footer>
+	<a href="https://www.instagram.com/p/CuZQMOpgUJ-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">Astrophysics Image Description: IC 418</a>
 
-    <footer>
-        <p id="lastModified"></p>
-    </footer>
+	<a href="https://www.instagram.com/p/C9wwx_ioDKQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">Astrophysics Image Description: CW Leonis</a>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<a href="https://www.instagram.com/p/C3-gof4Nppk/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">This Day in Science History: Discovery of Radioactivity</a>
+
+	<a href="https://www.instagram.com/p/CtgjCyvuLF2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">This Day in Science History: The Kite Experiment</a>
+
+	</div>
+<div class="section">
+<h2>Work Statistics</h2>
+    <canvas id="myPieChart" width="200" height="200"></canvas>
+
     <script>
         var ctx = document.getElementById('myPieChart').getContext('2d');
         var myPieChart = new Chart(ctx, {
@@ -112,7 +149,15 @@
                 }
             }
         });
+    </script>
+    <footer>
+        <p>&copy; 2024 Shreejaya Karantha. All rights reserved.</p>
+    </footer>
+<footer>
+        <p id="lastModified"></p>
+    </footer>
 
+    <script>
         // Get the last modified date and time of the document
         document.getElementById("lastModified").textContent = 
             "Last Modified: " + document.lastModified;

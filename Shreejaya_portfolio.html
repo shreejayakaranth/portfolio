@@ -125,42 +125,43 @@
 	<a href="https://www.instagram.com/p/CtgjCyvuLF2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">This Day in Science History: The Kite Experiment</a>
 
 	</div>
-<div class="section">
-<h2>Work Statistics</h2>
-    <canvas id="myPieChart" width="200" height="200"></canvas>
+       <div class="section">
+            <h2>Work Statistics</h2>
+            <canvas id="myPieChart"></canvas>
+        </div>
+    </div>
 
-    <script>
-        var ctx = document.getElementById('myPieChart').getContext('2d');
-        var myPieChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Video Scripts', 'Astrophysics Image Descriptions', 'Short-form Content'],
-                datasets: [{
-                    data: [30, 110, 250],
-                    backgroundColor: ['#190591', '#fed0c5', '#0056b3'],
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                }
-            }
-        });
-    </script>
     <footer>
         <p>&copy; 2024 Shreejaya Karantha. All rights reserved.</p>
     </footer>
-<footer>
-        <p id="lastModified"></p>
-    </footer>
 
+    <!-- Ensure Chart.js is loaded before running the script -->
     <script>
-        // Get the last modified date and time of the document
-        document.getElementById("lastModified").textContent = 
-            "Last Modified: " + document.lastModified;
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.Chart) {
+                var ctx = document.getElementById('myPieChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Video Scripts', 'Astrophysics Image Descriptions', 'Short-form Content'],
+                        datasets: [{
+                            data: [30, 110, 250],
+                            backgroundColor: ['#190591', '#fed0c5', '#0056b3'],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                        }
+                    }
+                });
+            } else {
+                console.error("Chart.js not loaded.");
+            }
+        });
     </script>
 </body>
 </html>

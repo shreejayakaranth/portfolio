@@ -1,0 +1,8 @@
+title: My Awesome Site
+description: Welcome to my GitHub Pages site.
+baseurl: "" # Leave empty if using the root directory; use "/portfolio" if in a subfolder
+url: "https://shreejayakaranth.github.io" # Your GitHub Pages URL
+
+# Optional settings
+theme: jekyll-theme-primer # Use the theme you are using
+markdown: kramdown

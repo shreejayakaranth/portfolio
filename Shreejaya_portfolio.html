@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
-            font-family: Montserrat, sans-serif;
+            font-family: Garamond, serif;
             margin: 0;
             padding: 0;
             background-color: linear-gradient(135deg, #17b5ce, #001ab0);
-            color: #50;
+            color: #333;
             text-align: left;
         }
         .header {
-            background: linear-gradient(90deg, #eebd89,  #d13abd);
+            background: linear-gradient(135deg, #0056b3, #fed0c5);
             color: white;
             padding: 2rem 0;
 	    text-align: center;
@@ -29,18 +30,19 @@
         .section {
             margin: 1rem 0;
         }
-        .section h2 {
+        .section h2{
             color: #190591;
-        }
+	}
+	
         .button {
             display: inline-block;
             margin: 0.5rem;
             padding: 0.75rem 1.5rem;
-            color: #8b47b5;
+            color:  #190591;
             background-color: #fed0c5 ;
             text-decoration: none;
             border-radius: 15px;
-	    border: 2px solid coral;
+	    border: 5px solid #190591;
             font-size: 1rem;
             transition: background-color 0.3s,  border-color 0.3s;
         }
@@ -57,17 +59,26 @@
         footer p {
             margin: 0;
         }
-    </style>
+	#myPieChart {
+            max-width: 500px;
+            max-height: 500px;
+            width: 100%;
+            height: auto;
+	    justify-align: center;
+        }
+       </style>
 </head>
 <body>
     <div class="header">
         <h1>Shreejaya Karantha</h1>
         <h3>Content Writer and Research Specialist, <a href ="https://www.secretsofuniverse.in/">The Secrets of the Universe</a></h3>
+	<h3><a href ="mailto: shreejayakaranth@gmail.com">shreejayakaranth@gmail.com </a> </h3>
+
     </div>
 
     <div class="content">
         <div class="section">
-            <p>Explore my work in science writing, focused on astronomy and cosmology. Below are clickable links to some of my recent work.</p>
+            <p>Explore my work in science writing, focused in astronomy and cosmology. Below are the clickable links to some of my recent work.</p>
         </div>
         <div class="section">
             <h2>YouTube Video Scripts (Research-Based Content Creation)</h2>
@@ -95,20 +106,61 @@
 <a href="https://www.instagram.com/reel/CoKkPCzvLi4/?igsh=MThqMnM5YXJtNXg3Yg==" class="button" target="_blank">Why are Webb's mirror segments gold coated?</a>
 <a href="https://www.instagram.com/reel/Cri-K2-p3Tl/?igsh=MWZlaGpzZGp3eGw1aA==" class="button" target="_blank">We are going back to Jupiter!</a>
 <a href="https://www.instagram.com/reel/CrOawPPoc_8/?igsh=MWV1aTE2aTFuM3BocQ==" class="button" target="_blank">The beauty of Carina Nebula</a>	    
-        </div>
+
     </div>
  <div class="section">
             <h2>Short-form content</h2>
             <a href="https://www.instagram.com/p/CrBIZv1L0u-/?utm_source=ig_web_copy_link" class="button" target="_blank">Afterlife of Stars</a>
-<a href="https://www.instagram.com/p/CqdpPugpTvR/?utm_source=ig_web_copy_link" class="button" target="_blank">What are Primordial black holes?</a>
 
-<a href="https://www.instagram.com/reel/CoKkPCzvLi4/?igsh=MThqMnM5YXJtNXg3Yg==" class="button" target="_blank">Why are Webb's mirror segments gold coated?</a>
-<a href="https://www.instagram.com/reel/Cri-K2-p3Tl/?igsh=MWZlaGpzZGp3eGw1aA==" class="button" target="_blank">We are going back to Jupiter!</a>
-<a href="https://www.instagram.com/reel/CrOawPPoc_8/?igsh=MWV1aTE2aTFuM3BocQ==" class="button" target="_blank">The beauty of Carina Nebula</a>	    
-        </div>
+	<a href="https://www.instagram.com/p/CqdpPugpTvR/?utm_source=ig_web_copy_link" class="button" target="_blank">What are Primordial black holes?</a>
+	        
+	<a href="https://www.instagram.com/p/C_K_d73o42L/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">Astrophysics Image Description: MSH 15-52</a>
 
+	<a href="https://www.instagram.com/p/CuZQMOpgUJ-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">Astrophysics Image Description: IC 418</a>
+
+	<a href="https://www.instagram.com/p/C9wwx_ioDKQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">Astrophysics Image Description: CW Leonis</a>
+
+	<a href="https://www.instagram.com/p/C3-gof4Nppk/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">This Day in Science History: Discovery of Radioactivity</a>
+
+	<a href="https://www.instagram.com/p/CtgjCyvuLF2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="button" target="_blank">This Day in Science History: The Kite Experiment</a>
+
+	</div>
+<div class="section">
+<h2>Work Statistics</h2>
+    <canvas id="myPieChart" width="1" height="1"></canvas>
+
+    <script>
+        var ctx = document.getElementById('myPieChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Video Scripts', 'Astrophysics Image Descriptions', 'Short-form Content'],
+                datasets: [{
+                    data: [30, 110, 250],
+                    backgroundColor: ['#190591', '#fed0c5', '#0056b3'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                }
+            }
+        });
+    </script>
     <footer>
         <p>&copy; 2024 Shreejaya Karantha. All rights reserved.</p>
     </footer>
+<footer>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        // Get the last modified date and time of the document
+        document.getElementById("lastModified").textContent = 
+            "Last Modified: " + document.lastModified;
+    </script>
 </body>
 </html>
